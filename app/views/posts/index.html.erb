@@ -1,21 +1,22 @@
-<h1>Listing posts</h1>
 
-<table>
-  <tr>
-    <th>Favor</th>
-    <th>What this means</th>
-    <th>Username</th>
-  </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= link_to post.title, post %></td>
-    <td><%= post.meaning %></td>
-    <td><%= post.user.username unless post.user.nil? %></td>
-  </tr>
-<% end %>
-</table>
+<div class="stream">
+  <h1>Listing posts</h1>
+  <table>
+    <tr>
+      <th>Favor</th>
+      <th>What this means</th>
+      <th>Username</th>
+    </tr>
 
-<br />
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title, post %></td>
+      <td><%= post.meaning %></td>
+      <td><%= post.user.username unless post.user.nil? %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 
-<%= link_to 'New Post', new_post_path %>
+
